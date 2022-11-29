@@ -15,10 +15,10 @@ namespace ChessGame.tabuleiro
 
         public Tabuleiro tabuleiro { get; set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tabuleiro) {
-            this.posicao = posicao;
+        public Peca(Tabuleiro tab, Cor cor) {
+            this.posicao = null;
             this.cor = cor;
-            this.tabuleiro = tabuleiro;
+            this.tabuleiro = tab;
             this.qteMovimentos = 0;
         }
     }
