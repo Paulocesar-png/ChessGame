@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessGame.Tabuleiro
+namespace ChessGame.tabuleiro
 {
-    class Posicao
+    internal class Posicao
     {
         public int linha { get; set; }
         public int coluna { get; set; }
