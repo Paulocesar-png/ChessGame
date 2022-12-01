@@ -21,5 +21,9 @@ namespace ChessGame.tabuleiro
             this.tabuleiro = tab;
             this.qteMovimentos = 0;
         }
+
+        public void incrementarQteMovimentos() {
+            qteMovimentos++;
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using ChessGame.tabuleiro;
+using ChessGame.xadrez;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +38,14 @@ namespace ChessGame
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static PosicaoXadrez lerPosicaoXadrez() {
+            String s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }
