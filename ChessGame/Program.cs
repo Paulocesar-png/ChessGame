@@ -32,12 +32,15 @@ namespace ChessGame
                         partida.validarPosicaoDeDestino(origem, destino);
 
                         partida.realizaJogada(origem, destino);
+
                     } catch (TabuleiroExecption e) {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
 
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
 
             } catch (TabuleiroExecption e) {
                 Console.WriteLine(e.Message);

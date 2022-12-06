@@ -22,11 +22,18 @@ namespace ChessGame
 
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (!partida.terminada) {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque) {
+                    Console.WriteLine("Xeque!");
+                }
 
-            if (partida.xeque) {
-                Console.WriteLine("Xeque!");
+            } else {
+                Console.WriteLine("Xequemate");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
+  
+
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida) {
@@ -101,7 +108,7 @@ namespace ChessGame
         }
 
         public static PosicaoXadrez lerPosicaoXadrez() {
-            String s = Console.ReadLine();
+            string s = Console.ReadLine();
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
 
