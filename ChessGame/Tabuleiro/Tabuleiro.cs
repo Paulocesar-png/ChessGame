@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChessGame.tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
+
         public int linhas { get; set; }
-
         public int colunas { get; set; }
-
         private Peca[,] pecas;
 
         public Tabuleiro(int linhas, int colunas) {
@@ -28,19 +27,23 @@ namespace ChessGame.tabuleiro
             return pecas[pos.linha, pos.coluna];
         }
 
+        public bool existePeca(Posicao pos) {
+            validarPosicao(pos);
+            return peca(pos) != null;
+        }
+
         public void colocarPeca(Peca p, Posicao pos) {
             if (existePeca(pos)) {
-                throw new TabuleiroExecption("Já existe uma peça nessa posição! ");
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
             pecas[pos.linha, pos.coluna] = p;
-            p.posicao = pos; 
+            p.posicao = pos;
         }
 
         public Peca retirarPeca(Posicao pos) {
             if (peca(pos) == null) {
                 return null;
             }
-
             Peca aux = peca(pos);
             aux.posicao = null;
             pecas[pos.linha, pos.coluna] = null;
@@ -48,7 +51,7 @@ namespace ChessGame.tabuleiro
         }
 
         public bool posicaoValida(Posicao pos) {
-            if (pos.linha < 0 || pos.linha > linhas || pos.coluna<0 || pos.coluna>= colunas) {
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas) {
                 return false;
             }
             return true;
@@ -56,13 +59,8 @@ namespace ChessGame.tabuleiro
 
         public void validarPosicao(Posicao pos) {
             if (!posicaoValida(pos)) {
-                throw new TabuleiroExecption("Posição inválida! ");
+                throw new TabuleiroException("Posição inválida!");
             }
-        }
-
-        public bool existePeca(Posicao pos) {
-            validarPosicao(pos);
-            return peca(pos) != null;
         }
     }
 }

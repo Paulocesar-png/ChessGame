@@ -1,5 +1,4 @@
 ﻿using ChessGame.tabuleiro;
-using System.Runtime.ConstrainedExecution;
 
 namespace ChessGame.xadrez
 {

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChessGame.tabuleiro
 {
-    internal class TabuleiroExecption : Exception
+    class TabuleiroException : Exception
     {
-        public TabuleiroExecption(string msg) : base (msg){
-        
+
+        public TabuleiroException(string msg) : base(msg) {
         }
     }
 }

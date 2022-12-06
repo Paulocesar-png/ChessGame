@@ -1,6 +1,4 @@
-﻿
-
-using ChessGame.tabuleiro;
+﻿using ChessGame.tabuleiro;
 
 namespace ChessGame.xadrez
 {

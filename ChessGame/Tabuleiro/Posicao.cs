@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChessGame.tabuleiro
 {
-    internal class Posicao
+    class Posicao
     {
+
         public int linha { get; set; }
         public int coluna { get; set; }
-
-        public Posicao() { 
-        }
 
         public Posicao(int linha, int coluna) {
             this.linha = linha;
@@ -23,8 +21,11 @@ namespace ChessGame.tabuleiro
             this.linha = linha;
             this.coluna = coluna;
         }
+
         public override string ToString() {
-            return linha + ", " + coluna;
+            return linha
+                + ", "
+                + coluna;
         }
     }
 }
